@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Button2 from "./components/atoms/Button/Button.components";
-import Link from "./components/atoms/Link/Link.components";
-import ListItem from "./components/molecules/ListItem/ListItem.component";
 import Input from "./components/atoms/Input/Input.component";
 import List from "./components/organisms/List/List.component";
 import GitHubRepos from "./components/templates/GitHubRepos/GitHubRepos.component";
+import Button from "./components/atoms/Button/Button.components";
 
 const githubRepoEndpoint = "https://api.github.com/users/t0mashawk/repos";
 const fetchOptions = {
@@ -44,6 +42,9 @@ function App() {
     setSearchTerm(event.currentTarget.value);
   };
 
+  const filteredRepos = repos.filter((item: any) =>
+  item.name.toLowerCase().includes(searchTerm.toLowerCase())
+)
   return (
     <GitHubRepos>
       <Input value={searchTerm} onChange={handleInputChange}/>
@@ -51,8 +52,9 @@ function App() {
         <p>Loading repos...</p>
       ) : (
      
-        <List items={repos} searchTerm={searchTerm}/>
+        <List items={filteredRepos}/>
       )}
+      <Button color="navy" text="Test"></Button>
     </GitHubRepos>
   );
 }

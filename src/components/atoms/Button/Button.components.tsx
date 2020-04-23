@@ -2,15 +2,16 @@ import React from 'react'
 import * as Styled from './Button.styles'
 
 interface ButtonProps{
-    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
-    label: string;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+    color?: string
+    text: string
 }
 
 function Button(props: ButtonProps){
-    const {label, onClick} = props
+    const {onClick, color, text} = props
     return(
-        <Styled.Container>
-        <button onClick={event => onClick(event)}>{label}</button>
+        <Styled.Container color={color && color}>
+        <button onClick={event => onClick && onClick(event)}>{text}</button>
         </Styled.Container>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from '../../atoms/Link/Link.components'
-import Button2 from '../../atoms/Button/Button.components'
+import Button from '../../atoms/Button/Button.components'
 import * as Styled from './ListItem.styles'
 
 interface ListItemProps{
@@ -13,7 +13,7 @@ function ListItem(props: ListItemProps){
     return(
         <Styled.Container>
             <Link href={href} text={text}/>
-            {/* <Button2>Like</Button2> */}
+            <Button text='like'/>
         </Styled.Container>
     )
 }

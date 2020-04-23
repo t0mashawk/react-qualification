@@ -1,4 +1,5 @@
 import React from 'react'
+import * as Styled from './Input.styles'
 
 interface InputProps{
     value:string;
@@ -7,7 +8,9 @@ interface InputProps{
 function Input(props:InputProps){
     const{value,onChange} = props
     return(
-        <input value={value} onChange={ev=>onChange(ev)}></input>
+        <Styled.Container>
+        <input value={value} onChange={ev=>{onChange(ev)}}></input>
+        </Styled.Container>
     )
 }
 

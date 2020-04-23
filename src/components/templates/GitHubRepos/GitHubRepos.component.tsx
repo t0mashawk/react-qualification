@@ -11,4 +11,4 @@ function GitHubRepos(props: PageProps): JSX.Element {
   return <Styled.Container>{children}</Styled.Container>;
 }
 
-export default GitHubRepos as React.FC<PageProps>;
+export default GitHubRepos
