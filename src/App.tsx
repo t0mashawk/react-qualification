@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Button2 from "./components/atoms/Button/Button.components";
+import Link from "./components/atoms/Link/Link.components";
+import ListItem from "./components/molecules/ListItem/ListItem.component";
+import Input from "./components/atoms/Input/Input.component";
+import List from "./components/organisms/List/List.component";
+import GitHubRepos from "./components/templates/GitHubRepos/GitHubRepos.component";
 
 const githubRepoEndpoint = "https://api.github.com/users/t0mashawk/repos";
 const fetchOptions = {
@@ -24,7 +30,7 @@ const fetchRepos = async (): Promise<any> => {
 
 function App() {
   const [repos, setRepos] = useState<GithubRepo[]>([]);
-  const [serchTerm, setSerchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -35,28 +41,19 @@ function App() {
   }, []);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSerchTerm(event.currentTarget.value);
+    setSearchTerm(event.currentTarget.value);
   };
 
   return (
-    <div>
-      <input value={serchTerm} onChange={handleInputChange}></input>
+    <GitHubRepos>
+      <Input value={searchTerm} onChange={handleInputChange}/>
       {loading ? (
         <p>Loading repos...</p>
       ) : (
-        <ul>
-          {repos
-            .filter((repo: GithubRepo) =>
-              repo.name.toLowerCase().includes(serchTerm.toLowerCase())
-            )
-            .map((repo: GithubRepo, index) => (
-              <li key={index}>
-                <a href={repo.html_url}>{repo.name}</a>
-              </li>
-            ))}
-        </ul>
+     
+        <List items={repos} searchTerm={searchTerm}/>
       )}
-    </div>
+    </GitHubRepos>
   );
 }
 
