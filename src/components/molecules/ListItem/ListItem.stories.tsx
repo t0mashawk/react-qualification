@@ -4,5 +4,5 @@ import ListItem from "./ListItem.component"
 
 storiesOf("ListItem", module)
     .add("test",
-        () => <ListItem text="link" href="http://www.google.com"/>
+        () => <ListItem text="link" href="http://www.google.com" buttonText="like"/>
     )

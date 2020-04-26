@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage renders as expected 1`] = `
+<div
+  className="sc-AxhCb szNEq"
+>
+  <div
+    className="sc-AxhUy jjWtGP"
+  >
+    <input
+      onChange={[Function]}
+      value=""
+    />
+  </div>
+  <p>
+    Loading repos...
+  </p>
+  <div
+    className="sc-AxirZ cmLbkl"
+    color="navy"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Test
+    </button>
+  </div>
+</div>
+`;

@@ -12,8 +12,8 @@ function List(props:ListProps){
         <Styled.Container>
              {items
             
-            .map((item: any) => (
-                <ListItem href={item.html_url} text={item.name}/>
+            .map((item: any, index:number) => (
+                <ListItem href={item.html_url} text={item.name} buttonText="like" key={index}/>
             ))}
         </Styled.Container>
     )

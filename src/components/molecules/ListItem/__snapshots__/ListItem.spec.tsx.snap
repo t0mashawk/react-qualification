@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LiListItem renders as expected 1`] = `
+<li
+  className="sc-AxirZ kGGelg"
+>
+  <a
+    href="www.google.com"
+  >
+    Example Value
+  </a>
+  <div
+    className="sc-AxjAm kNDLCK"
+  >
+    <button
+      onClick={[Function]}
+    >
+      example
+    </button>
+  </div>
+</li>
+`;
